@@ -57,7 +57,7 @@ function insertMacrosInElement(cardElement, nutritionData) {
 }
 
 
-waitForElement('div.extra', (element) => {
+waitForElement('div.protein', (element) => {
   const cards = document.querySelectorAll('div.cardcomponent')
 
   for (const card of cards) {
