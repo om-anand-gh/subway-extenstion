@@ -50,57 +50,35 @@ function createMacrosElement(nutritionData) {
   return nutritonCalculated
 }
 
-function insertMacrosInElement(cardElement, nutritionData){
+function insertMacrosInElement(cardElement, nutritionData) {
   const nutritionElement = cardElement.getElementsByClassName('cardcomponent__price')[0]
   macrosElement = createMacrosElement(nutritionData)
   nutritionElement.insertAdjacentElement('afterend', macrosElement)
 }
 
-waitForElement('div.bread', (element) => {
-  const breads = document.querySelectorAll('div.bread div.cardcomponent')
-  // console.log(`${breads} ${breads.length}`)
-  for (const bread of breads) {
-    if (bread) {
-      var breadName = bread.getAttribute('data-testauto-id').split('-')
-      if (breadName[1] === 'and') {
-        breadName = breadName.slice(3).join(' ')
-      }
-      else if (breadName[0] === 'grilled' || breadName[0] === 'toasted') {
-        breadName = breadName.slice(1).join(' ')
-      }
-
-      // console.log(`Bread data ${breadData[0].name}`)
-      const breadData = breadsNutritionData.find(e => e.name === breadName)
-      insertMacrosInElement(bread, breadData)
-      // nutritionElement.insertAdjacentElement('afterend', nutritonCalculated)
-
-      // console.log(`Found nutrition price ${nutritionElement}  ${nutritionElement.textContent}`)
-
-    }
-  }
-});
 
 waitForElement('div.extra', (element) => {
   const cards = document.querySelectorAll('div.cardcomponent')
-  
+
   for (const card of cards) {
     if (card.parentElement)
-    if (card) {
-      var cardTestId = card.getAttribute('data-testauto-id')
-      
-      // console.log(`Bread data ${breadData[0].name}`)
-      const cardData = cardNutritionData.find(e => e.data_testauto_id === cardTestId)
+      if (card) {
+        var cardTestId = card.getAttribute('data-testauto-id')
 
-      try {
-      insertMacrosInElement(card, cardData)
+        // console.log(`Bread data ${breadData[0].name}`)
+        const cardData = cardNutritionData.find(e =>
+          Array.isArray(e.data_testauto_id) ? e.data_testauto_id.includes(cardTestId) : e.data_testauto_id === cardTestId)
+
+        try {
+          insertMacrosInElement(card, cardData)
+        }
+        catch (exceptionVar) {
+          console.log(`Unable to insert macros in ${cardTestId} with macros ${cardData}`)
+        }
+        // nutritionElement.insertAdjacentElement('afterend', nutritonCalculated)
+
+        // console.log(`Found nutrition price ${nutritionElement}  ${nutritionElement.textContent}`)
+
       }
-      catch (exceptionVar) {
-        console.log(`Unable to insert macros in ${cardTestId} with macros ${cardData}`)
-      }
-      // nutritionElement.insertAdjacentElement('afterend', nutritonCalculated)
-
-      // console.log(`Found nutrition price ${nutritionElement}  ${nutritionElement.textContent}`)
-
-    }
   }
 });

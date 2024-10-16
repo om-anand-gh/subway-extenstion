@@ -1,6 +1,7 @@
 const breadsNutritionData = [
   {
     name: "classic italian",
+    data_testauto_id: ["toasted-classic-italian", "-classic-italian", "grilled-classic-italian", "toasted-and-grilled-classic-italian"],
     serving_size_g: 71,
     calories: 200,
     total_fat_g: 2,
@@ -10,10 +11,10 @@ const breadsNutritionData = [
     fiber_g: 1,
     sugars_g: 3,
     protein_g: 7
-    , data_testauto_id: "lettuce"
   },
   {
     name: "multigrain",
+    data_testauto_id: ["toasted-multigrain", "-multigrain", "grilled-multigrain", "toasted-and-grilled-multigrain"],
     serving_size_g: 71,
     calories: 200,
     total_fat_g: 2,
@@ -23,10 +24,10 @@ const breadsNutritionData = [
     fiber_g: 3,
     sugars_g: 4,
     protein_g: 9
-    , data_testauto_id: "lettuce"
   },
   {
     name: "flatbread",
+    data_testauto_id: ["toasted-flatbread", "-flatbread", "grilled-flatbread", "toasted-and-grilled-flatbread"],
     serving_size_g: 45,
     calories: 140,
     total_fat_g: 3,
@@ -36,10 +37,10 @@ const breadsNutritionData = [
     fiber_g: 1,
     sugars_g: 2,
     protein_g: 4
-    , data_testauto_id: "lettuce"
   },
   {
     name: "classic italian herbs & cheese",
+    data_testauto_id: ["toasted-classic-italian-herbs-&-cheese", "-classic-italian-herbs-&-cheese", "grilled-classic-italian-herbs-&-cheese", "toasted-and-grilled-classic-italian-herbs-&-cheese"],
     serving_size_g: 82,
     calories: 240,
     total_fat_g: 5,
@@ -49,7 +50,6 @@ const breadsNutritionData = [
     fiber_g: 2,
     sugars_g: 3,
     protein_g: 9
-    , data_testauto_id: "lettuce"
   },
   {
     name: "english muffin",
@@ -62,7 +62,6 @@ const breadsNutritionData = [
     fiber_g: 1,
     sugars_g: 1,
     protein_g: 5
-    , data_testauto_id: "lettuce"
   },
   {
     name: "ciabatta",
@@ -75,7 +74,6 @@ const breadsNutritionData = [
     fiber_g: 2,
     sugars_g: 0,
     protein_g: 6
-    , data_testauto_id: "lettuce"
   },
   {
     name: "gluten free bread",
@@ -88,7 +86,6 @@ const breadsNutritionData = [
     fiber_g: 3,
     sugars_g: 7,
     protein_g: 6
-    , data_testauto_id: "lettuce"
   },
   {
     name: "potato bun",
@@ -101,7 +98,6 @@ const breadsNutritionData = [
     fiber_g: 1,
     sugars_g: 3,
     protein_g: 3
-    , data_testauto_id: "lettuce"
   },
   {
     name: "wrap",
@@ -765,4 +761,33 @@ const sauceData = [
   }
 ];
 
-const cardNutritionData = veggieNutritionData.concat(cheeseNutritionData, proteinData, sauceData)
+const seasoningData = [
+  {
+    name: "Salt",
+    data_testauto_id: "salt",
+    serving_size_g: 0,
+    calories: 0,
+    total_fat_g: 0,
+    saturated_fat_g: 0,
+    trans_fat_g: 0,
+    carbohydrates_g: 0,
+    fiber_g: 0,
+    sugars_g: 0,
+    protein_g: 0
+  },
+  {
+    name: "Pepper",
+    data_testauto_id: "pepper",
+    serving_size_g: 0,
+    calories: 0,
+    total_fat_g: 0,
+    saturated_fat_g: 0,
+    trans_fat_g: 0,
+    carbohydrates_g: 0,
+    fiber_g: 0,
+    sugars_g: 0,
+    protein_g: 0
+  },
+]
+
+const cardNutritionData = veggieNutritionData.concat(breadsNutritionData, cheeseNutritionData, proteinData, sauceData, seasoningData)
