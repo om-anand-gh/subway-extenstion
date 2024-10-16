@@ -80,56 +80,11 @@ waitForElement('div.bread', (element) => {
   }
 });
 
-
-
-// waitForElement('div.cheese', (element) => {
-//   const cheeses = document.querySelectorAll('div.cheese div.cardcomponent')
-//   // console.log(`${breads} ${breads.length}`)
-//   for (const cheese of cheeses) {
-//     if (cheese) {
-//       var cheeseTestId = cheese.getAttribute('data-testauto-id')
-      
-//       // console.log(`Bread data ${breadData[0].name}`)
-//       const cheeseData = cheeseNutritionData.find(e => e.data_testauto_id === cheeseTestId)
-//       console.log(cheeseNutritionData, cheeseData, cheeseTestId)
-//       insertMacrosInElement(cheese, cheeseData)
-//       // nutritionElement.insertAdjacentElement('afterend', nutritonCalculated)
-
-//       // console.log(`Found nutrition price ${nutritionElement}  ${nutritionElement.textContent}`)
-
-//     }
-//   }
-// });
-
-
-// waitForElement('div.vegetable', (element) => {
-//   const veggies = document.querySelectorAll('div.vegetable div.cardcomponent')
-//   // console.log(`${breads} ${breads.length}`)
-//   for (const veggie of veggies) {
-//     if (veggie) {
-//       var veggieTestId = veggie.getAttribute('data-testauto-id')
-      
-//       // console.log(`Bread data ${breadData[0].name}`)
-//       const veggieData = veggieNutritionData.find(e => e.data_testauto_id === veggieTestId)
-
-//       try {
-//       insertMacrosInElement(veggie, veggieData)
-//       }
-//       catch (exceptionVar) {
-//         console.error(`Unable to insert macros in ${veggieTestId} with macros ${veggieData}`)
-//       }
-//       // nutritionElement.insertAdjacentElement('afterend', nutritonCalculated)
-
-//       // console.log(`Found nutrition price ${nutritionElement}  ${nutritionElement.textContent}`)
-
-//     }
-//   }
-// });
-
 waitForElement('div.extra', (element) => {
   const cards = document.querySelectorAll('div.cardcomponent')
-  // console.log(`${breads} ${breads.length}`)
+  
   for (const card of cards) {
+    if (card.parentElement)
     if (card) {
       var cardTestId = card.getAttribute('data-testauto-id')
       
@@ -140,7 +95,7 @@ waitForElement('div.extra', (element) => {
       insertMacrosInElement(card, cardData)
       }
       catch (exceptionVar) {
-        console.warn(`Unable to insert macros in ${cardTestId} with macros ${cardData}`)
+        console.log(`Unable to insert macros in ${cardTestId} with macros ${cardData}`)
       }
       // nutritionElement.insertAdjacentElement('afterend', nutritonCalculated)
 
