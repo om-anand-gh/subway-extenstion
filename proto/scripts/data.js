@@ -369,7 +369,7 @@ const veggieNutritionData = [
   },
   {
     name: "Crispy Onions",
-    dataTestAutoId: "crispy-onions",
+    data_testauto_id: "crispy-onions",
     serving_size_g: 14,
     calories: 80,
     total_fat_g: 4,
