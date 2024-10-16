@@ -567,4 +567,202 @@ const proteinData = [
   }
 ];
 
-const cardNutritionData = veggieNutritionData.concat(cheeseNutritionData, proteinData)
+const sauceData = [
+  {
+    name: "Chimichurri Sauce",
+    data_testauto_id: "chimichurri",
+    serving_size_g: 14,
+    calories: 80,
+    total_fat_g: 8,
+    saturated_fat_g: 1,
+    trans_fat_g: 0,
+    carbohydrates_g: 0,
+    fiber_g: 0,
+    sugars_g: 0,
+    protein_g: 0
+  },
+  {
+    name: "Chipotle Southwest",
+    data_testauto_id: "chipotle-southwest",
+    serving_size_g: 14,
+    calories: 60,
+    total_fat_g: 6,
+    saturated_fat_g: 1,
+    trans_fat_g: 0,
+    carbohydrates_g: 1,
+    fiber_g: 0,
+    sugars_g: 0,
+    protein_g: 0
+  },
+  {
+    name: "Cuban-Style Sauce",
+    data_testauto_id: "cuban-style-sauce",
+    serving_size_g: 14,
+    calories: 70,
+    total_fat_g: 7,
+    saturated_fat_g: 1,
+    trans_fat_g: 0,
+    carbohydrates_g: 1,
+    fiber_g: 0,
+    sugars_g: 0,
+    protein_g: 0
+  },
+  {
+    name: "Garlic Aioli",
+    data_testauto_id: "garlic-aioli",
+    serving_size_g: 14,
+    calories: 70,
+    total_fat_g: 7,
+    saturated_fat_g: 1,
+    trans_fat_g: 0,
+    carbohydrates_g: 1,
+    fiber_g: 0,
+    sugars_g: 1,
+    protein_g: 0
+  },
+  {
+    name: "House Sandwich Sauce",
+    data_testauto_id: "house-sauce",
+    serving_size_g: 14,
+    calories: 70,
+    total_fat_g: 8,
+    saturated_fat_g: 1,
+    trans_fat_g: 0,
+    carbohydrates_g: 1,
+    fiber_g: 0,
+    sugars_g: 1,
+    protein_g: 0
+  },
+  {
+    name: "Jerk Aioli",
+    data_testauto_id: "jerk-aioli",
+    serving_size_g: 14,
+    calories: 90,
+    total_fat_g: 10,
+    saturated_fat_g: 2,
+    trans_fat_g: 0,
+    carbohydrates_g: 1,
+    fiber_g: 0,
+    sugars_g: 0,
+    protein_g: 0
+  },
+  {
+    name: "Mayonnaise",
+    data_testauto_id: "mayonnaise",
+    serving_size_g: 14,
+    calories: 100,
+    total_fat_g: 11,
+    saturated_fat_g: 2,
+    trans_fat_g: 0,
+    carbohydrates_g: 0,
+    fiber_g: 0,
+    sugars_g: 0,
+    protein_g: 0
+  },
+  {
+    name: "Mustard, Yellow",
+    data_testauto_id: "mustard",
+    serving_size_g: 14,
+    calories: 10,
+    total_fat_g: 1,
+    saturated_fat_g: 0,
+    trans_fat_g: 0,
+    carbohydrates_g: 1,
+    fiber_g: 0,
+    sugars_g: 0,
+    protein_g: 1
+  },
+  {
+    name: "Nashville-Style Hot Sauce",
+    data_testauto_id: "nashville-style-hot-sauce",
+    serving_size_g: 14,
+    calories: 35,
+    total_fat_g: 3,
+    saturated_fat_g: 0,
+    trans_fat_g: 0,
+    carbohydrates_g: 3,
+    fiber_g: 0,
+    sugars_g: 2,
+    protein_g: 0
+  },
+  {
+    name: "Peppercorn Ranch",
+    data_testauto_id: "peppercorn-ranch",
+    serving_size_g: 14,
+    calories: 80,
+    total_fat_g: 8,
+    saturated_fat_g: 1,
+    trans_fat_g: 0,
+    carbohydrates_g: 1,
+    fiber_g: 0,
+    sugars_g: 0,
+    protein_g: 0
+  },
+  {
+    name: "Smoky Honey Mustard",
+    data_testauto_id: "smoky-honey-mustard",
+    serving_size_g: 14,
+    calories: 45,
+    total_fat_g: 5,
+    saturated_fat_g: 1,
+    trans_fat_g: 0,
+    carbohydrates_g: 3,
+    fiber_g: 0,
+    sugars_g: 3,
+    protein_g: 0
+  },
+  {
+    name: "Sweet & Smoky BBQ",
+    data_testauto_id: "-sweet-&-smoky-bbq-sauce",
+    serving_size_g: 14,
+    calories: 35,
+    total_fat_g: 0,
+    saturated_fat_g: 0,
+    trans_fat_g: 0,
+    carbohydrates_g: 9,
+    fiber_g: 0,
+    sugars_g: 7,
+    protein_g: 0
+  },
+  {
+    name: "Sweet Onion Teriyaki Sauce",
+    data_testauto_id: "sweet-onion-teriyaki-sauce",
+    serving_size_g: 14,
+    calories: 35,
+    total_fat_g: 0,
+    saturated_fat_g: 0,
+    trans_fat_g: 0,
+    carbohydrates_g: 8,
+    fiber_g: 0,
+    sugars_g: 7,
+    protein_g: 0
+  },
+  {
+    name: "Tahini Garlic Sauce",
+    data_testauto_id: "tahini",
+    serving_size_g: 14,
+    calories: 70,
+    total_fat_g: 6,
+    saturated_fat_g: 1,
+    trans_fat_g: 0,
+    carbohydrates_g: 1,
+    fiber_g: 0,
+    sugars_g: 1,
+    protein_g: 1
+  },
+  {
+    name: "Tandoori-Spiced Sauce",
+    data_testauto_id: "tandoori-spiced-sauce",
+    serving_size_g: 14,
+    calories: 90,
+    total_fat_g: 10,
+    saturated_fat_g: 2,
+    trans_fat_g: 0,
+    carbohydrates_g: 1,
+    fiber_g: 0,
+    sugars_g: 0,
+    protein_g: 0
+  }
+];
+
+const cardNutritionData = veggieNutritionData.concat(cheeseNutritionData, proteinData, sauceData)
