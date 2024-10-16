@@ -651,6 +651,19 @@ const proteinData = [
     fiber_g: 1,
     sugars_g: 1,
     protein_g: 11
+  },
+  {
+    name: "Salami",
+    data_testauto_id: "salami",
+    serving_size_g: 59,
+    calories: 230,
+    total_fat_g: 20,
+    saturated_fat_g: 7,
+    trans_fat_g: 1,
+    carbohydrates_g: 2,
+    fiber_g: 0,
+    sugars_g: 1,
+    protein_g: 11
   }  
 ];
 
