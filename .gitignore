@@ -1,2 +1,5 @@
 # Ignore chrome examples
 examples/*
+
+# Ignore zip files
+*.zip
