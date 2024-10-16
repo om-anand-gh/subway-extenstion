@@ -381,3 +381,190 @@ const veggieNutritionData = [
     protein_g: 1
   }
 ];
+
+const proteinData = [
+  {
+    name: "Bacon Slices (2 strips)",
+    data_testauto_id: "bacon",
+    serving_size_g: 10,
+    calories: 50,
+    total_fat_g: 4,
+    saturated_fat_g: 2,
+    trans_fat_g: 0,
+    carbohydrates_g: 0,
+    fiber_g: 0,
+    sugars_g: 0,
+    protein_g: 4
+  },
+  {
+    name: "Beef Brisket (includes BBQ)",
+    data_testauto_id: "beef-brisket",
+    serving_size_g: 113,
+    calories: 300,
+    total_fat_g: 15,
+    saturated_fat_g: 4,
+    trans_fat_g: 0,
+    carbohydrates_g: 20,
+    fiber_g: 1,
+    sugars_g: 14,
+    protein_g: 20
+  },
+  {
+    name: "Capicola",
+    data_testauto_id: "capicola",
+    serving_size_g: 22,
+    calories: 35,
+    total_fat_g: 2,
+    saturated_fat_g: 1,
+    trans_fat_g: 0,
+    carbohydrates_g: 1,
+    fiber_g: 0,
+    sugars_g: 1,
+    protein_g: 3
+  },
+  {
+    name: "Chicken, Grilled",
+    data_testauto_id: "chicken-grilled",
+    serving_size_g: 64,
+    calories: 60,
+    total_fat_g: 1,
+    saturated_fat_g: 0,
+    trans_fat_g: 0,
+    carbohydrates_g: 1,
+    fiber_g: 1,
+    sugars_g: 1,
+    protein_g: 11
+  },
+  {
+    name: "Chicken Strips, Plain",
+    data_testauto_id: "chicken-strips-plain",
+    serving_size_g: 71,
+    calories: 80,
+    total_fat_g: 2,
+    saturated_fat_g: 1,
+    trans_fat_g: 0,
+    carbohydrates_g: 1,
+    fiber_g: 0,
+    sugars_g: 0,
+    protein_g: 15
+  },
+  {
+    name: "Cold Cut Combo Meats",
+    data_testauto_id: "cold-cut-combo",
+    serving_size_g: 54,
+    calories: 160,
+    total_fat_g: 14,
+    saturated_fat_g: 5,
+    trans_fat_g: 0,
+    carbohydrates_g: 2,
+    fiber_g: 0,
+    sugars_g: 1,
+    protein_g: 7
+  },
+  {
+    name: "Egg Patty, Scrambled",
+    data_testauto_id: "egg-patty-scrambled",
+    serving_size_g: 85,
+    calories: 150,
+    total_fat_g: 12,
+    saturated_fat_g: 3,
+    trans_fat_g: 0,
+    carbohydrates_g: 3,
+    fiber_g: 1,
+    sugars_g: 1,
+    protein_g: 8
+  },
+  {
+    name: "Ham, Black Forest",
+    data_testauto_id: "ham-black-forest",
+    serving_size_g: 54,
+    calories: 70,
+    total_fat_g: 2,
+    saturated_fat_g: 1,
+    trans_fat_g: 0,
+    carbohydrates_g: 4,
+    fiber_g: 0,
+    sugars_g: 1,
+    protein_g: 8
+  },
+  {
+    name: "Italian B.M.T.® Meats",
+    data_testauto_id: "italian-bmt-meats",
+    serving_size_g: 71,
+    calories: 190,
+    total_fat_g: 14,
+    saturated_fat_g: 5,
+    trans_fat_g: 0,
+    carbohydrates_g: 3,
+    fiber_g: 0,
+    sugars_g: 1,
+    protein_g: 12
+  },
+  {
+    name: "Meatballs with Marinara",
+    data_testauto_id: "meatballs-marinara",
+    serving_size_g: 139,
+    calories: 240,
+    total_fat_g: 15,
+    saturated_fat_g: 6,
+    trans_fat_g: 1,
+    carbohydrates_g: 12,
+    fiber_g: 2,
+    sugars_g: 5,
+    protein_g: 15
+  },
+  {
+    name: "Pepperoni (3 slices)",
+    data_testauto_id: "pepperoni",
+    serving_size_g: 18,
+    calories: 80,
+    total_fat_g: 7,
+    saturated_fat_g: 3,
+    trans_fat_g: 0,
+    carbohydrates_g: 1,
+    fiber_g: 0,
+    sugars_g: 1,
+    protein_g: 4
+  },
+  {
+    name: "Rotisserie-Style Chicken",
+    data_testauto_id: "rotisserie-style-chicken",
+    serving_size_g: 71,
+    calories: 100,
+    total_fat_g: 3,
+    saturated_fat_g: 1,
+    trans_fat_g: 0,
+    carbohydrates_g: 1,
+    fiber_g: 0,
+    sugars_g: 0,
+    protein_g: 17
+  },
+  {
+    name: "Tandoori-Spiced Pork Cutlet",
+    data_testauto_id: "tandoori-spiced-pork-cutlet",
+    serving_size_g: 87,
+    calories: 260,
+    total_fat_g: 22,
+    saturated_fat_g: 5,
+    trans_fat_g: 0,
+    carbohydrates_g: 2,
+    fiber_g: 0,
+    sugars_g: 1,
+    protein_g: 17
+  },
+  {
+    name: "Porchetta, Diced",
+    data_testauto_id: "porchetta",
+    serving_size_g: 71,
+    calories: 180,
+    total_fat_g: 13,
+    saturated_fat_g: 5,
+    trans_fat_g: 0,
+    carbohydrates_g: 1,
+    fiber_g: 0,
+    sugars_g: 0,
+    protein_g: 11
+  }
+];
+
+const cardNutritionData = veggieNutritionData.concat(cheeseNutritionData, proteinData)
