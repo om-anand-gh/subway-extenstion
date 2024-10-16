@@ -1,7 +1,7 @@
 const breadsNutritionData = [
   {
     name: "classic italian",
-    data_testauto_id: ["toasted-classic-italian", "-classic-italian", "grilled-classic-italian", "toasted-and-grilled-classic-italian"],
+    data_testauto_id: ["toasted-classic-italian", "classic-italian","-classic-italian", "grilled-classic-italian", "toasted-and-grilled-classic-italian"],
     serving_size_g: 71,
     calories: 200,
     total_fat_g: 2,
@@ -14,7 +14,7 @@ const breadsNutritionData = [
   },
   {
     name: "multigrain",
-    data_testauto_id: ["toasted-multigrain", "-multigrain", "grilled-multigrain", "toasted-and-grilled-multigrain"],
+    data_testauto_id: ["toasted-multigrain", "multigrain", "-multigrain", "grilled-multigrain", "toasted-and-grilled-multigrain"],
     serving_size_g: 71,
     calories: 200,
     total_fat_g: 2,
@@ -27,7 +27,7 @@ const breadsNutritionData = [
   },
   {
     name: "flatbread",
-    data_testauto_id: ["toasted-flatbread", "-flatbread", "grilled-flatbread", "toasted-and-grilled-flatbread"],
+    data_testauto_id: ["toasted-flatbread", "flatbread", "-flatbread", "grilled-flatbread", "toasted-and-grilled-flatbread"],
     serving_size_g: 45,
     calories: 140,
     total_fat_g: 3,
@@ -40,7 +40,7 @@ const breadsNutritionData = [
   },
   {
     name: "classic italian herbs & cheese",
-    data_testauto_id: ["toasted-classic-italian-herbs-&-cheese", "-classic-italian-herbs-&-cheese", "grilled-classic-italian-herbs-&-cheese", "toasted-and-grilled-classic-italian-herbs-&-cheese"],
+    data_testauto_id: ["toasted-classic-italian-herbs-&-cheese", "classic-italian-herbs-&-cheese","-classic-italian-herbs-&-cheese", "grilled-classic-italian-herbs-&-cheese", "toasted-and-grilled-classic-italian-herbs-&-cheese"],
     serving_size_g: 82,
     calories: 240,
     total_fat_g: 5,
@@ -380,6 +380,19 @@ const veggieNutritionData = [
 
 const proteinData = [
   {
+    name: "Deli-Style Turkey",
+    data_testauto_id: "deli-style-turkey",
+    serving_size_g: 60,
+    calories: 70,
+    total_fat_g: 2,
+    saturated_fat_g: 0,
+    trans_fat_g: 0,
+    carbohydrates_g: 4,
+    fiber_g: 0,
+    sugars_g: 2,
+    protein_g: 9
+  },  
+  {
     name: "Bacon Slices (2 strips)",
     data_testauto_id: "bacon",
     serving_size_g: 10,
@@ -498,7 +511,7 @@ const proteinData = [
   },
   {
     name: "Meatballs with Marinara",
-    data_testauto_id: "meatballs-marinara",
+    data_testauto_id: "meatballs",
     serving_size_g: 139,
     calories: 240,
     total_fat_g: 15,
@@ -560,7 +573,85 @@ const proteinData = [
     fiber_g: 0,
     sugars_g: 0,
     protein_g: 11
-  }
+  },
+  {
+    name: "Shaved Steak",
+    data_testauto_id: "shaved-steak",
+    serving_size_g: 71,
+    calories: 110,
+    total_fat_g: 5,
+    saturated_fat_g: 2,
+    trans_fat_g: 0,
+    carbohydrates_g: 3,
+    fiber_g: 0,
+    sugars_g: 2,
+    protein_g: 14
+  },
+  {
+    name: "Sweet Onion Teriyaki Glazed Chicken Strips",
+    data_testauto_id: "sweet-onion-teriyaki-glazed-chicken-strips",
+    serving_size_g: 85,
+    calories: 110,
+    total_fat_g: 2,
+    saturated_fat_g: 1,
+    trans_fat_g: 0,
+    carbohydrates_g: 9,
+    fiber_g: 0,
+    sugars_g: 7,
+    protein_g: 15
+  },
+  {
+    name: "Bologna, Salami, Smoked Luncheon Meat",
+    data_testauto_id: "bologna,-salami,-smoked-luncheon-meat",
+    serving_size_g: 54,
+    calories: 160,
+    total_fat_g: 14,
+    saturated_fat_g: 5,
+    trans_fat_g: 0,
+    carbohydrates_g: 2,
+    fiber_g: 0,
+    sugars_g: 1,
+    protein_g: 7
+  },
+  {
+    name: "Deli-Style Ham",
+    data_testauto_id: "deli-style-ham",
+    serving_size_g: 54,
+    calories: 70,
+    total_fat_g: 2,
+    saturated_fat_g: 1,
+    trans_fat_g: 0,
+    carbohydrates_g: 4,
+    fiber_g: 0,
+    sugars_g: 1,
+    protein_g: 8
+  },
+  {
+    name: "Tuna (includes Mayonnaise)",
+    data_testauto_id: "tuna",
+    serving_size_g: 71,
+    calories: 230,
+    total_fat_g: 20,
+    saturated_fat_g: 3,
+    trans_fat_g: 0,
+    carbohydrates_g: 0,
+    fiber_g: 0,
+    sugars_g: 0,
+    protein_g: 11
+  },
+  {
+    name: "Grilled Chicken",
+    data_testauto_id: "grilled-chicken-",
+    serving_size_g: 64,
+    calories: 60,
+    total_fat_g: 1,
+    saturated_fat_g: 0,
+    trans_fat_g: 0,
+    carbohydrates_g: 1,
+    fiber_g: 1,
+    sugars_g: 1,
+    protein_g: 11
+  }  
 ];
 
 const sauceData = [
@@ -788,6 +879,20 @@ const seasoningData = [
     sugars_g: 0,
     protein_g: 0
   },
+  {
+    name: "Veggie Patty",
+    data_testauto_id: "veggie-patty",
+    serving_size_g: 85,
+    calories: 170,
+    total_fat_g: 9,
+    saturated_fat_g: 1,
+    trans_fat_g: 0,
+    carbohydrates_g: 17,
+    fiber_g: 8,
+    sugars_g: 2,
+    protein_g: 6
+  }
+  
 ]
 
 const cardNutritionData = veggieNutritionData.concat(breadsNutritionData, cheeseNutritionData, proteinData, sauceData, seasoningData)
