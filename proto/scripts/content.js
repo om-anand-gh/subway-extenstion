@@ -1,42 +1,3 @@
-
-
-// const article = document.querySelector('article');
-
-// // `document.querySelector` may return null if the selector doesn't match anything.
-// if (article) {
-//   const text = article.textContent;
-
-//   const wordMatchRegExp = /[^\s]+/g;
-//   const words = text.matchAll(wordMatchRegExp);
-//   // matchAll returns an iterator, convert to array to get word count
-//   const wordCount = [...words].length;
-//   const readingTime = Math.round(wordCount / 200);
-//   const badge = document.createElement('p');
-//   // Use the same styling as the publish information in an article's header
-//   badge.classList.add('color-secondary-text', 'type--caption');
-//   badge.textContent = `⏱️ ${readingTime} min read`;
-
-//   // Support for API reference docs
-//   const heading = article.querySelector('h1');
-//   // Support for article docs with date
-//   const date = article.querySelector('time')?.parentNode;
-
-//   // https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement
-//   (date ?? heading).insertAdjacentElement('afterend', badge);
-// }
-
-
-function waitForElement(selector, callback) {
-  const interval = setInterval(() => {
-    const element = document.querySelector(selector);
-    if (element) {
-      clearInterval(interval);
-      callback(element);
-    }
-  }, 100); // Checks every 100 milliseconds
-}
-
-
 function calculateCalories(protein, carbohydrate, fat) {
   return 4 * (protein + carbohydrate) + 9 * fat
 }
@@ -57,28 +18,52 @@ function insertMacrosInElement(cardElement, nutritionData) {
 }
 
 
-waitForElement('div.protein', (element) => {
-  const cards = document.querySelectorAll('div.cardcomponent')
+// Function to check if the element is visible
+function isElementVisible(elem) {
+  if (!elem) return false;
+  const style = getComputedStyle(elem);
+  return style && style.display !== 'none' && style.visibility !== 'hidden' && elem.offsetHeight > 0;
+}
 
-  for (const card of cards) {
-    if (card.parentElement)
-      if (card) {
-        var cardTestId = card.getAttribute('data-testauto-id')
+// Function to modify the content of the specific element
+function modifyElementContent(elem) {
+  if (elem && isElementVisible(elem) && !elem.getAttribute('data-modified')) {
+    elem.setAttribute('data-modified', 'true');
 
-        // console.log(`Bread data ${breadData[0].name}`)
-        const cardData = cardNutritionData.find(e =>
-          Array.isArray(e.data_testauto_id) ? e.data_testauto_id.includes(cardTestId) : e.data_testauto_id === cardTestId)
+    var cardTestId = elem.getAttribute('data-testauto-id')
 
-        try {
-          insertMacrosInElement(card, cardData)
-        }
-        catch (exceptionVar) {
-          console.log(`Unable to insert macros in ${cardTestId} with macros ${cardData}`)
-        }
-        // nutritionElement.insertAdjacentElement('afterend', nutritonCalculated)
+    const cardData = cardNutritionData.find(e =>
+      Array.isArray(e.data_testauto_id) ? e.data_testauto_id.includes(cardTestId) : e.data_testauto_id === cardTestId)
 
-        // console.log(`Found nutrition price ${nutritionElement}  ${nutritionElement.textContent}`)
-
-      }
+    try {
+      insertMacrosInElement(elem, cardData)
+    }
+    catch (exceptionVar) {
+      console.log(`Unable to insert macros in ${cardTestId} with macros ${cardData}`)
+    }
   }
+}
+
+// Specify the selector for the target element
+const targetSelector = "div.cardcomponent"; // Update this to match the element's ID or class
+
+// Function to iterate over all matching elements and modify their content
+function modifyAllVisibleElements() {
+  const elements = document.querySelectorAll(targetSelector);
+  elements.forEach((elem) => {
+    modifyElementContent(elem);
+  });
+}
+
+// MutationObserver to detect changes in the DOM
+const observer = new MutationObserver((mutations) => {
+  mutations.forEach(() => {
+    modifyAllVisibleElements(); // Check all matching elements on any DOM change
+  });
+});
+
+// Start observing the document for changes
+observer.observe(document.body, {
+  childList: true,
+  subtree: true
 });
