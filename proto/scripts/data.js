@@ -101,6 +101,7 @@ const breadsNutritionData = [
   },
   {
     name: "wrap",
+    data_testauto_id: "grilled-wrap",
     serving_size_g: 102,
     calories: 300,
     total_fat_g: 8,
@@ -862,6 +863,21 @@ const sauceData = [
     fiber_g: 0,
     sugars_g: 0,
     protein_g: 0
+  },
+  {
+    // This data was calculated by subtracting the nutritional values of Classic Italian Bread, 
+    // Double Pepperoni, and Processed Cheddar from the total nutritional values of the BYO Pizza Sub Melt
+    name: "Marinara Sauce",
+    data_testauto_id: "marinara-sauce",
+    serving_size_g: 14,  // Assumed based on typical serving size of sauces
+    calories: 20,
+    total_fat_g: 0,
+    saturated_fat_g: 0,
+    trans_fat_g: 0,
+    carbohydrates_g: 4,
+    fiber_g: 1,
+    sugars_g: 3,
+    protein_g: 0
   }
 ];
 
@@ -904,8 +920,20 @@ const seasoningData = [
     fiber_g: 8,
     sugars_g: 2,
     protein_g: 6
-  }
-  
+  },
+  {
+    name: "Brown, Red & Wild Rice Blend",
+    data_testauto_id: "brown,-red-&-wild-rice-blend",
+    serving_size_g: 113,
+    calories: 190,
+    total_fat_g: 3,
+    saturated_fat_g: 0,
+    trans_fat_g: 0,
+    carbohydrates_g: 39,
+    fiber_g: 2,
+    sugars_g: 0,
+    protein_g: 4
+  }  
 ]
 
 const cardNutritionData = veggieNutritionData.concat(breadsNutritionData, cheeseNutritionData, proteinData, sauceData, seasoningData)
