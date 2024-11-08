@@ -1,3 +1,14 @@
+let totalNutrition = {
+  calories: 0,
+  total_fat_g: 0,
+  saturated_fat_g: 0,
+  trans_fat_g: 0,
+  carbohydrates_g: 0,
+  fiber_g: 0,
+  sugars_g: 0,
+  protein_g: 0
+}
+
 function calculateCalories(protein, carbohydrate, fat) {
   return 4 * (protein + carbohydrate) + 9 * fat
 }
@@ -58,28 +69,60 @@ function isFootlongSelected() {
   return getSubSize() === "footlong"
 }
 
-// Function to modify the content of the specific element
+function displayTotalNutrition() {
+  const existingSpan = document.querySelector('[data-testauto-id="pdp-footer-calorie-each"]');
+
+  if (existingSpan) {
+    let totalNutritionSpan = document.getElementById('total-nutrition-calories');
+
+    if (!totalNutritionSpan) {
+      totalNutritionSpan = document.createElement('span');
+      totalNutritionSpan.id = 'total-nutrition-calories';
+      totalNutritionSpan.className = 'prodinfo__calorie';
+      existingSpan.insertAdjacentElement('afterend', totalNutritionSpan);
+    }
+
+    const isFootlong = getSubSize() === "footlong";
+    totalNutritionSpan.textContent = generateMacrosText(totalNutrition, isFootlong);
+  }
+}
+
+
 function modifyElementContent(elem) {
   if (elem && isElementVisible(elem)) {
     const currentSubSize = getSubSize();
     const dataModified = elem.getAttribute('data-modified');
+    const isIngredientSelected = elem.getAttribute("aria-checked") === 'true';
+    const isIncludedInCalculation = elem.getAttribute("included-in-calculation") === 'true';
+
+    let cardTestId = elem.getAttribute('data-testauto-id');
+    const cardData = cardNutritionData.find(e =>
+      Array.isArray(e.data_testauto_id) ? e.data_testauto_id.includes(cardTestId) : e.data_testauto_id === cardTestId);
 
     // Run if it's the initial load (data-modified not present) or if sub size changes
     if (!dataModified || dataModified !== currentSubSize) {
       elem.setAttribute('data-modified', currentSubSize);
 
-      var cardTestId = elem.getAttribute('data-testauto-id')
-
-      const cardData = cardNutritionData.find(e =>
-        Array.isArray(e.data_testauto_id) ? e.data_testauto_id.includes(cardTestId) : e.data_testauto_id === cardTestId)
-
       try {
-        createOrUpdateMacrosElement(elem, cardData)
-      }
-      catch (exceptionVar) {
-        console.log(`Unable to insert macros in ${cardTestId} with macros ${cardData}`)
+        createOrUpdateMacrosElement(elem, cardData);
+      } catch (exceptionVar) {
+        console.log(`Unable to insert macros in ${cardTestId} with macros ${cardData}`);
       }
     }
+
+    if (!isIncludedInCalculation && isIngredientSelected) {
+      for (const macro in totalNutrition) {
+        totalNutrition[macro] += cardData[macro];
+      }
+      elem.setAttribute("included-in-calculation", 'true');
+    } else if (isIncludedInCalculation && !isIngredientSelected) {
+      for (const macro in totalNutrition) {
+        totalNutrition[macro] -= cardData[macro];
+      }
+      elem.setAttribute("included-in-calculation", 'false');
+    }
+
+    displayTotalNutrition();
   }
 }
 
