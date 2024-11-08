@@ -17,14 +17,14 @@ function generateMacrosText(nutritionData, isFootlong = false) {
   // Double the values if it's a footlong
   const multiplier = isFootlong ? 2 : 1;
 
-  const calories = calculateCalories(
-    nutritionData.protein_g * multiplier,
-    nutritionData.carbohydrates_g * multiplier,
-    nutritionData.total_fat_g * multiplier
-  );
+  // const calories = calculateCalories(
+  //   nutritionData.protein_g * multiplier,
+  //   nutritionData.carbohydrates_g * multiplier,
+  //   nutritionData.total_fat_g * multiplier
+  // );
 
   const nutritionCalculatedText =
-    ' Macros ' + calories + ' Cals | Protein ' + (nutritionData.protein_g * multiplier) + 'g | Carbs ' + (nutritionData.carbohydrates_g * multiplier) + 'g (Fiber ' + (nutritionData.fiber_g * multiplier) + 'g Sugars ' + (nutritionData.sugars_g * multiplier) + 'g) | Fat ' + (nutritionData.total_fat_g * multiplier) + 'g (Saturated ' + (nutritionData.saturated_fat_g * multiplier) + 'g Trans ' + (nutritionData.trans_fat_g * multiplier) + 'g)';
+    ' Protein ' + (nutritionData.protein_g * multiplier) + 'g | Carbs ' + (nutritionData.carbohydrates_g * multiplier) + 'g (Fiber ' + (nutritionData.fiber_g * multiplier) + 'g Sugars ' + (nutritionData.sugars_g * multiplier) + 'g) | Fat ' + (nutritionData.total_fat_g * multiplier) + 'g (Saturated ' + (nutritionData.saturated_fat_g * multiplier) + 'g Trans ' + (nutritionData.trans_fat_g * multiplier) + 'g)';
 
   return nutritionCalculatedText;
 }
